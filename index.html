@@ -5,14 +5,31 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
   </head>
+  <style>body{padding: 10px 60px;}</style>
+  
+
 
   <body ng-controller="BasicController">
-       <ul>
+    <table class="table table-striped">
+      <thead>
+        <th>Name</th>
+        <th>Graduated</th>
+        <th>University</th>
+        <th>Degree</th>
+        <th>Location</th>
+        <th>In-Consideration <input ng-model="banana"></th>
+      </thead>
+      <tbody>
 
-         <li ng-repeat="student in studentData" class="row">
-            <div class="col-md-2">{{ student.name }}</div>
-            <div class="col-md-2">{{ student.graduated }}</div>
-         </li>
-       </ul>
+         <tr ng-repeat="student in studentData">
+            <td> {{ student.name }} </td>
+            <td> {{ student.graduated }} </td>
+            <td> {{ student.university }} </td>
+            <td> {{ student.degree }} </td>
+            <td> {{ student.location }} </td>
+            <td> {{ banana }} </td>
+         </tr>
+      </tbody>
+    </table>
   </body>
 </html>
